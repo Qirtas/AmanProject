@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.aman.amanapp.MessagesFragment">
+    tools:context="com.aman.amanapp.Fragment.MessagesFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,6 +40,7 @@
                     />
 
                 <ImageView
+                    android:id="@+id/iv_compose"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/plus_ic"

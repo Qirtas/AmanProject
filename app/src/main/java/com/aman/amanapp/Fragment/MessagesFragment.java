@@ -1,10 +1,7 @@
-package com.aman.amanapp;
+package com.aman.amanapp.Fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,9 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.aman.amanapp.Adapter.MessageAdapter;
+import com.aman.amanapp.MainActivity;
 import com.aman.amanapp.Model.MessageModel;
+import com.aman.amanapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +58,15 @@ public class MessagesFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+
+        ImageView iv_compose = (ImageView) view.findViewById(R.id.iv_compose);
+        iv_compose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).addFragment(ComposeMessageFragment.newInstance(), true);
+
+            }
+        });
 
         prepareMessagesData();
 
